@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>jQMThemeForWindowsPhone8</id>
+    <version>0.0.4</version>
+    <title />
+    <authors>Sergey Grebnov</authors>
+    <owners>Sergey Grebnov</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0.html</licenseUrl>
+    <projectUrl>http://sgrebnov.github.com/jqmobile-wp8-theme/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Provides a Windows Phone user interface for Cordova apps using jQuery Mobile on Windows Phone 8</description>
+  </metadata>
+</package>
