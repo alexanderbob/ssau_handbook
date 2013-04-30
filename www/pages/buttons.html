@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<meta content="text/html; charset=utf-8"/>
-	<title>Buttons</title>
-</head>
+	    <meta content="text/html; charset=utf-8"/>
+	    <title>Buttons</title>
+    </head>
 <body>
-
 	<div data-role="page" class="type-interior" data-theme="a">
 		<div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false">
-        <span class="ui-app-title">Be inspired by WP8</span>
-		<h1>buttons</h1>
-	</div>
-
+            <span class="ui-app-title">Be inspired by WP8</span>
+		    <h1>buttons</h1>
+	    </div>
+    <script>
+        function showDetails(event) {
+            alert('w: ' + event.currentTarget.offsetWidth+', h:' + event.currentTarget.offsetHeight);
+        }
+    </script>
 	<div data-role="content" data-theme="a">
 
         <div data-role="fieldcontain">
+            <div class="header_ssau">Самарский Государственный<br><span style="letter-spacing: 5px;">Аэрокосмический</span><br>Университет им. С. П. Королёва</div>
+        	<div class="square struct" onclick="showDetails(event);"><div class="square_name">Структура</div></div>
+        	<div class="square shedule" onclick="showDetails(event);"><div class="square_name">Расписание</div></div>
+        	<div class="square staff"><div class="square_name">Преподаватели</div></div>
+        	<div class="square corps"><div class="square_name">Корпусы</div></div>
+        	<div class="square details"><div class="square_name">Реквизиты</div></div>
+        	<div class="square miscellaneous"><div class="square_name">Разное</div></div>
+            
+            <!--
+            <div onclick="showDetails(event);" style="width: 48%; margin: 1%; height: 173px; float: left; background: gray;"></div>
+            <div onclick="showDetails(event);" style="width: 48%; margin: 1%; height: 173px; float: left; background: red;"></div>
+            
+            <div onclick="showDetails(event);"style="width: 173px; height: 173px; background: #0094ff;"></div>
+            <div onclick="showDetails(event);"style="width: 100px; height: 173px; float: left; background: blue;"></div>
+            <div onclick="showDetails(event);"style="width: 100px; height: 173px; float: left; background: white;"></div>
+            
             <a href="#" data-role="button" data-inline="true">content fit button</a>
             <br/>
             <a href="#" data-role="button" >sample button</a>
@@ -27,7 +46,7 @@
             <br/>
             <a href="#" data-role="button" data-icon="star" data-iconpos="bottom">bottom-icon button</a>
             <br/>
-            <a href="../index.html">Link button</a>
+            <a href="../index.html">Link button</a>-->
         </div>
 
     </div>

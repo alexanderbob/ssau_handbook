@@ -1,0 +1,56 @@
+﻿.square
+{
+	width: 48%;
+	height: 130pt;
+	background: #5179ae;
+	float: left;
+	margin-right: 1%;
+    margin-bottom: 1%;
+	position: relative;
+}
+
+.square_name
+{
+	position:absolute;
+	left: 15px;
+	bottom: 10px;
+	color: #FFF;
+	font: 14px Segoe WP;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.square.struct
+{
+	background: #5179ae url(struct.png) center center no-repeat;
+}
+
+.square.shedule
+{
+	background: #5179ae url(shed.png) center center no-repeat;
+}
+
+.square.staff
+{
+	background: #5179ae url(staff.png) center center no-repeat;
+}
+
+.square.corps
+{
+	background: #5179ae url(builds.png) center center no-repeat;
+}
+
+.square.details
+{
+	background: #5179ae url(details.png) center center no-repeat;
+}
+
+.square.miscellaneous
+{
+	background: #5179ae url(misc.png) center center no-repeat;
+}
+
+.square:active
+{
+	background-color: #7AA2D7;
+}
