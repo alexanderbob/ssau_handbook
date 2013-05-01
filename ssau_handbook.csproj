@@ -278,7 +278,6 @@
     <Content Include="www\js\jquery.easing.1.3.js" />
     <Content Include="www\js\jquery.globalstylesheet.js" />
     <Content Include="www\js\jquery.js" />
-    <Content Include="www\js\jquery.mobile-1.3.1.js" />
     <Content Include="www\js\jquery.mobile.fixedToolbar.polyfill.js" />
     <Content Include="www\js\jquery.mobile.js" />
     <Content Include="www\js\jquery.mobile.themeswitcher.js" />

@@ -95,7 +95,6 @@
     <script src="js/jquery.cordova.wp.themeswitcher.js" type="text/javascript"></script>
     <script src="js/dateTimePicker.js" type="text/javascript"></script>
 
-
     <script type="text/javascript">
         var absoluteUrl = window.location.href;
         $.themesDir = absoluteUrl.substring(0, absoluteUrl.lastIndexOf('/')) + '/css/';
@@ -110,10 +109,29 @@
                 document.getElementById("appTitle").innerHTML = "Theme overview";
             }
 
-            $("[data-role=header]").fixedtoolbar({ hideDuringFocus: "" });
+            $(document).delegate("#buttonsPage", "pageinit", function () {
+                $('.square').on('mousedown', function () {
+                    $(this).animate(
+                        { borderSpacing: 3 },
+                        { step: function (now, fx) {
+                            $(this).css('transform', 'rotate(' + now + 'deg)');
+                          },
+                          duration: 'slow'
+                        },
+                        'linear'
+                    ).animate(
+                        { borderSpacing: 0 },
+                        { step: function (now, fx) {
+                            $(this).css('transform', 'rotate(' + now + 'deg)');
+                          },
+                          duration: 'slow'
+                        },
+                        'linear'
+                    );
+                });
+            });
 
-            /*$(document).swipeleft(function () { alert('swipe left') });
-            $(document).swiperight(function () { alert('swipe right') });*/
+            $("[data-role=header]").fixedtoolbar({ hideDuringFocus: "" });
         });
     </script>
     

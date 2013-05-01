@@ -20,7 +20,7 @@
 #
 -->
 <widget>
-
+  <preference name="orientation" value="portrait" />
   <plugins>
     <plugin name="Device"/>
     <plugin name="Logger"/>
