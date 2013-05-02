@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8"/>
+    <title>Windows phone 8 theme demo page</title>   
+</head>
+<body>
+<div data-role="page" class="type-interior" data-theme="a">
+    <div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false">
+        <span class="ui-app-title">Be inspired by WP8</span>
+
+        <h1 id="appTitle">jQuery Mobile theme for Windows Phone 8</h1>
+    </div>
+
+    <div data-role="content" data-theme="a" style="min-height: 105% !important">
+        <div data-role="fieldcontain">
+
+            <h2>Welcome</h2>
+
+            <p style="font-weight: bold">This theme provides a Windows Phone user interface for Apache Cordova apps using jQuery Mobile on Windows Phone 8.</p>
+            <p>While the theme itself adds all wndows phone specific colors
+                and fonts by default, please don't forget to follow <a href="http://msdn.microsoft.com/en-us/library/hh202915(v=VS.92).aspx">user experience design guidelines</a>.</p>
+
+            <p id="noteWP8Required" style="display: none">To view DateTime picker and Theme Switcher plugins of the jQM theme for Windows Phone, please view from within an Apache Cordova app in Windows Phone 8.</p>
+            <h2>Browse</h2>
+
+            <ul id="list-view-1" name="list-view-1" data-role="listview" data-inset="true">
+
+
+                <li data-role="list-divider">jQMobile Standard</li>
+
+                <li><a href="pages/fonts.html">Fonts and colors</a></li>
+                <li><a href="pages/header.html">Headers and Footers</a></li>
+                <li><a href="pages/list.html">Listview and menus</a></li>
+                <li><a href="pages/buttons.html">Buttons</a></li>
+                <li><a href="pages/form-elements.html">Form elements</a></li>
+                <li><a href="pages/dialogs.html">Dialogs</a></li>
+
+
+                <li data-role="list-divider">Plugins</li>
+
+                <li><a href="pages/progress-bar.html">Progress bar</a></li>
+                <li><a href="pages/appbar.html">Application bar</a></li>
+                <li><a href="pages/toggle.html">Toggle button</a></li>
+                <li><a href="pages/date-time.html">DateTime Picker (Viewable only from an Apache Cordova app on Windows Phone 8)</a></li>
+                <li><a href="pages/switcher.html">Theme Switcher (Viewable only from an Apache Cordova app on Windows Phone 8)</a></li>
+
+            </ul>
+            
+            <h2>Try Different Themes</h2>
+            <br/>
+            Use the following button to switch between Windows Phone Dark and Light themes, and the original jQueryMobile theme
+            <div id="jqm-themeswitcher"></div>
+            <h5>When viewed via an Apache Cordova app on Windows Phone all system colors will be automatically applied via <a href="pages/switcher.html">Theme Switcher plugin</a></h5>
+            <br/>
+            <h2>Links</h2>
+            <br/>
+            <a href="http://sgrebnov.github.com/jqmobile-wp8-theme/" rel="external">Theme home page</a>
+        </div>
+
+    </div>
+
+
+</div>
+</body>
+</html>

@@ -1,55 +1,90 @@
-﻿.square
+﻿.header_ssau
+{
+	width: 100%;
+	background: url(../img/ssau_logo.png) left center no-repeat;
+	color: #5179ae;
+	padding-left: 130px;
+	margin-bottom: 68px;
+	line-height: 17px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: 7pt;
+    font-family: Segoe WP;
+    margin-top: 3.2em;
+}
+
+.medium_tile, .mini_tile {
+    background: #5179ae;
+	float: left;
+    position: relative;
+}
+
+.medium_tile_name, .mini_tile_name {
+    color: #FFF;
+    position:absolute;
+    font-weight: bold;
+}
+
+.mini_tile {
+    width: 23%;
+    height: 66px;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+
+.mini_tile_name {
+    font-size: 24pt;
+    left: 8%;
+    bottom: 8%;
+}
+
+.medium_tile
 {
 	width: 48%;
 	height: 134px;
-	background: #5179ae;
-	float: left;
 	margin-right: 2%;
     margin-bottom: 2%;
-	position: relative;
 }
 
-.square_name
+.medium_tile_name
 {
-	position:absolute;
-	left: 5%;
-	bottom: 5%;
-	color: #FFF;
 	font-size: 8.5pt;
-	font-weight: bold;
+    left: 5%;
+	bottom: 5%;
 }
 
-.square.struct
+.medium_tile.struct
 {
 	background: #5179ae url(../img/struct.png) center center no-repeat;
 }
 
-.square.shedule
+.medium_tile.shedule
 {
 	background: #5179ae url(../img/shed.png) center center no-repeat;
 }
 
-.square.staff
+.medium_tile.staff
 {
 	background: #5179ae url(../img/staff.png) center center no-repeat;
 }
 
-.square.corps
+.medium_tile.corps
 {
 	background: #5179ae url(../img/builds.png) center center no-repeat;
 }
 
-.square.details
+.medium_tile.details
 {
 	background: #5179ae url(../img/details.png) center center no-repeat;
 }
 
-.square.miscellaneous
+.medium_tile.miscellaneous
 {
 	background: #5179ae url(../img/misc.png) center center no-repeat;
 }
 
-.square:active
+.medium_tile:active
 {
 	background-color: #7AA2D7;
 }

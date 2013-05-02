@@ -50,6 +50,7 @@ $(document).ready(function(){
     $.mobile.pushStateEnabled = false;
     
     var version = parseInt($.browser.version);
+    //fast fix, coz only for WP8
     $(document.body).addClass('ui-ie' + version);
 
     if(version < 10){
@@ -57,5 +58,5 @@ $(document).ready(function(){
     } else {
         $.mobile.defaultDialogTransition = 'slide';
         $.mobile.defaultPageTransition = 'slide';
-    }     
+    }
 });
