@@ -52,6 +52,23 @@ var gPhonegap = {
                     callback(null);
                 }
             }
+            else
+            {
+                var ret = [], i = 0;
+                for (var j = 0; j < gConst.STAFF_TRANSLIT.length; j++)
+                {
+                    for (var k = 0; k < gConst.GLOBAL_STAFF_DATA[gConst.STAFF_TRANSLIT[j]].length; k++)
+                    {
+                        if (gConst.GLOBAL_STAFF_DATA[gConst.STAFF_TRANSLIT[j]][k].name.indexOf(str) > -1)
+                        {
+                            ret[i++] = gConst.GLOBAL_STAFF_DATA[gConst.STAFF_TRANSLIT[j]][k];
+                        }
+                    }
+                }
+                if (ret.length == 0)
+                    ret = null;
+                callback(ret);
+            }
         }
     },
     SQL: {

@@ -20,4 +20,14 @@
             'linear'
         );
     });
+
+    $('.mini_tile').on('mousedown', function () {
+        this.style.transform = 'scale(0.95)';
+        setTimeout(miniTileMouseDownTimeout, 200, this);
+    });
+
+    miniTileMouseDownTimeout = function(node)
+    {
+        node.style.transform = 'scale(1)';
+    }
 });

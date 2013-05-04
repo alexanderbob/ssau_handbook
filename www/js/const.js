@@ -18,12 +18,15 @@
     ],
     STAFF_SEARCH_TYPE_TILE: 1,
     STAFF_SEARCH_TYPE_STR: 2,
+    STAFF_SEARCH_MIN_LEN: 3,
     GLOBAL_STAFF_DATA: [],
     PATHS: {
         STAFF: 'JSON/'
     },
     debug: true,
     LOCALE: {
-        IS_MAIN: 'основное'
+        IS_MAIN: 'основное',
+        NO_TEXT_ENTERED: 'Пожалуйста, введите текст в поле ввода',
+        THREE_CHARS_MIN: 'Введите минимум три символа'
     }
 };
