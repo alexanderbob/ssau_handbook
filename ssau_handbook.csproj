@@ -317,6 +317,7 @@
     <Content Include="www\js\jquery.page.slider.js" />
     <Content Include="www\js\phoneTheme.js" />
     <Content Include="www\js\progress-bar.js" />
+    <Content Include="www\js\shedule.js" />
     <Content Include="www\js\staff.js" />
     <Content Include="www\js\toggle-button.js" />
     <Content Include="www\license.txt" />

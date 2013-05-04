@@ -1,9 +1,10 @@
 $(document).delegate('#staff_info_page', 'pageinit', function (event) {
-    //initialize staff page on first load
-    //gHelper.trace('staff init!');
     gStaff.init('staff_info_first', 'staff_info_second');
 });
 
+$(document).delegate('#shedule_page', 'pageinit', function (event) {
+    gShedule.init('shedule_table');
+});
 var gPhonegap = {
     // Application Constructor
     initialize: function () {

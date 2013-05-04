@@ -5,228 +5,25 @@
         <title>SSAU Staff</title>
     </head>
     <body>
-        <div data-role="page" class="type-interior" data-theme="a">
+        <div data-role="page" class="type-interior" data-theme="a" id="shedule_page">
             <div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false" style="padding-bottom: 15px;">
                 <span class="ui-app-title">Самарский государственный аэрокосмический университет</span>
-                <h1 style="line-height: 45px;">Расписание<br><span class="active">Нечётная неделя</span><span class="inactive">чётная неделя</span></h1>
+                <h1 style="line-height: 45px;">
+                    <!--Расписание
+                    <br>-->
+                    <span class="active">Нечётная неделя</span><span class="inactive">чётная неделя</span>
+                </h1>
             </div>
 
             <div data-role="content" data-theme="a">
                 <div data-role="fieldcontain">
-                    <table data-role="pageSlider" style="vertical-align: top; table-layout: fixed">
+                    <table data-role="pageSlider" style="vertical-align: top; table-layout: fixed" id="shedule_table">
                         <tr>
-                            <td style="width: 50%">
-                                <table class="shedule_item" cellspacing="10">
-                                    <tr>
-                                        <td colspan="2"><div class="mini_tile"><div class="mini_tile_name">ПН</div></div></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time_interval">8:15<br>9:50</td>
-                                        <td class="subject">Термодинамика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time_interval">9:50<br>11:35</td>
-                                        <td class="subject none">Нет занятий
-                                             <div class="more">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                   <tr>
-                                        <td class="time_interval">11:45<br>13:20</td>
-                                        <td class="subject lab">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time_interval">13:30<br>15:05</td>
-                                        <td class="subject lecture">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                   <tr>
-                                        <td class="time_interval">15:15<br>16:50</td>
-                                        <td class="subject lecture">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time_interval">17:00<br>18:35</td>
-                                        <td class="subject">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                                 <table class="shedule_item" cellspacing="10">
-                                    <tr>
-                                        <td colspan="2"><div class="mini_tile"><div class="mini_tile_name">ВТ</div></div></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time_interval">8:15<br>9:50</td>
-                                        <td class="subject">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time_interval">9:50<br>11:35</td>
-                                        <td class="subject none">Нет занятий
-                                             <div class="more">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                   <tr>
-                                        <td class="time_interval">11:45<br>13:20</td>
-                                        <td class="subject lab">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time_interval">13:30<br>15:05</td>
-                                        <td class="subject lecture">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                   <tr>
-                                        <td class="time_interval">15:15<br>16:50</td>
-                                        <td class="subject lecture">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time_interval">17:00<br>18:35</td>
-                                        <td class="subject">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <div style="clear: both"></div>
+                            <td style="width: 50%; vertical-align: top;">
+                                
                             </td>
                             <td style="vertical-align: top">
-                                <table class="shedule_item" cellspacing="10">
-                                    <tr>
-                                        <td colspan="2"><div class="mini_tile"><div class="mini_tile_name">ПН</div></div></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time_interval">8:15<br>9:50</td>
-                                        <td class="subject">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time_interval">9:50<br>11:35</td>
-                                        <td class="subject none">Нет занятий
-                                             <div class="more">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                   <tr>
-                                        <td class="time_interval">11:45<br>13:20</td>
-                                        <td class="subject lab">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time_interval">13:30<br>15:05</td>
-                                        <td class="subject lecture">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                   <tr>
-                                        <td class="time_interval">15:15<br>16:50</td>
-                                        <td class="subject lecture">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time_interval">17:00<br>18:35</td>
-                                        <td class="subject">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                                 <table class="shedule_item" cellspacing="10">
-                                    <tr>
-                                        <td colspan="2"><div class="mini_tile"><div class="mini_tile_name">ВТ</div></div></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time_interval">8:15<br>9:50</td>
-                                        <td class="subject">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time_interval">9:50<br>11:35</td>
-                                        <td class="subject none">Нет занятий
-                                             <div class="more">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                   <tr>
-                                        <td class="time_interval">11:45<br>13:20</td>
-                                        <td class="subject lab">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time_interval">13:30<br>15:05</td>
-                                        <td class="subject lecture">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                   <tr>
-                                        <td class="time_interval">15:15<br>16:50</td>
-                                        <td class="subject lecture">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time_interval">17:00<br>18:35</td>
-                                        <td class="subject">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
+                                <!--
                                 <label for="subject">Занятие:</label>
                                 <input type="text" name="subject" id="" value="" />
                                 <label for="teacher">Преподаватель:</label>
@@ -250,32 +47,10 @@
                                        data-transition="slide" data-role="button"
                                        data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" 
                                        data-theme="a">Отмена
-                               </a>
+                               </a>-->
                             </td>
                         </tr>
                     </table>
-                    <!--<h2>Welcome</h2>
-                    <p style="font-weight: bold">This theme provides a Windows Phone user interface for Apache Cordova apps using jQuery Mobile on Windows Phone 8.</p>
-                    <p>While the theme itself adds all wndows phone specific colors
-                        and fonts by default, please don't forget to follow <a href="http://msdn.microsoft.com/en-us/library/hh202915(v=VS.92).aspx">user experience design guidelines</a>.</p>
-                    <p id="noteWP8Required" style="display: none">To view DateTime picker and Theme Switcher plugins of the jQM theme for Windows Phone, please view from within an Apache Cordova app in Windows Phone 8.</p>
-                    <h2>Browse</h2>
-                    <ul id="list-view-1" name="list-view-1" data-role="listview" data-inset="true">
-                        <li data-role="list-divider">jQMobile Standard</li>
-                        <li><a href="pages/fonts.html">Fonts and colors</a></li>
-                        <li><a href="pages/header.html">Headers and Footers</a></li>
-                        <li><a href="pages/list.html">Listview and menus</a></li>
-                        <li><a href="pages/buttons.html">Buttons</a></li>
-                        <li><a href="pages/form-elements.html">Form elements</a></li>
-                        <li><a href="pages/dialogs.html">Dialogs</a></li>
-                        
-                        <li data-role="list-divider">Plugins</li>
-                        <li><a href="pages/progress-bar.html">Progress bar</a></li>
-                        <li><a href="pages/appbar.html">Application bar</a></li>
-                        <li><a href="pages/toggle.html">Toggle button</a></li>
-                        <li><a href="pages/date-time.html">DateTime Picker (Viewable only from an Apache Cordova app on Windows Phone 8)</a></li>
-                        <li><a href="pages/switcher.html">Theme Switcher (Viewable only from an Apache Cordova app on Windows Phone 8)</a></li>
-                    </ul>-->
                 </div>
             </div>
         </div>
