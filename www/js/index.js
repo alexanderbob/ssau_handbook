@@ -22,9 +22,37 @@ var gPhonegap = {
     // The scope of `this` is the event. In order to call the `receivedEvent`
     // function, we must explicity call `app.receivedEvent(...);`
     onDeviceReady: function () {
-        var sql = this.SQL;
+        /*var sql = this.SQL;
         sql.dbh = window.openDatabase(gConst.MYSQL_DB_NAME, gConst.MYSQL_DB_VER, gConst.MYSQL_DB_NAME, gConst.MYSQL_DB_SIZE);
-        sql.dbh.transaction(sql.dbCheckTables, sql.dbErrorCB, sql.dbInitialCheckSuccess);
+        sql.dbh.transaction(sql.dbCheckTables, sql.dbErrorCB, sql.dbInitialCheckSuccess);*/
+        this.DATA.initialCheck();
+    },
+    DATA: {
+        initialCheck: function () {
+            //load all staff members from JSON folder
+            for (var i = 0; i < gConst.STAFF_TRANSLIT.length; i++)
+            {
+                gHelper.loadScript(gConst.PATHS.STAFF + gConst.STAFF_TRANSLIT[i] + '.js', gPhonegap.DATA.initialLoadCallback, i);
+            }
+        },
+        initialLoadCallback: function (param) {
+            console.log('Staff by key ' + param + ' loaded!');
+        },
+        searchStaff: function (str, callback, searchType) {
+            if (searchType == gConst.STAFF_SEARCH_TYPE_TILE)
+            {
+                if (gConst.GLOBAL_STAFF_DATA[str].length > 0)
+                {
+                    gHelper.trace('Load by TILE ' + str + ' - ok!');
+                    callback(gConst.GLOBAL_STAFF_DATA[str]);
+                }
+                else
+                {
+                    gHelper.trace('Load by TILE ' + str + ' - FAIL!');
+                    callback(null);
+                }
+            }
+        }
     },
     SQL: {
         dbh: null,
