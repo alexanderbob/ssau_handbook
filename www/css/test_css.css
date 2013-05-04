@@ -11,7 +11,7 @@
     font-weight: normal;
     font-size: 7pt;
     font-family: Segoe WP;
-    margin-top: 3.2em;
+    margin-top: 1.0em;
 }
 
 .info {
@@ -20,8 +20,7 @@
 }
 
 .medium_tile, .mini_tile {
-    background: #5179ae;
-	float: left;
+    background: #007ACC;
     position: relative;
 }
 
@@ -37,10 +36,6 @@
     margin-right: 2%;
     margin-bottom: 2%;
     position:relative;
-}
-
-.mini-tile
-{
     float: left;
 }
 
@@ -53,10 +48,12 @@
 
 .medium_tile
 {
-	width: 48%;
+	/*width: 48%;*/
+    width: 134px;
 	height: 134px;
 	margin-right: 2%;
     margin-top: 2%;
+    float: left;
 }
 
 .medium_tile_name
@@ -64,44 +61,110 @@
 	font-size: 8.5pt;
     left: 5%;
 	bottom: 5%;
+    text-transform: uppercase;
 }
 
 .medium_tile.struct
 {
-	background: #5179ae url(../img/struct.png) center center no-repeat;
+	background: #007ACC url(../img/struct.png) center center no-repeat;
 }
 
 .medium_tile.shedule
 {
-	background: #5179ae url(../img/shed.png) center center no-repeat;
+	background: #007ACC url(../img/shed.png) center center no-repeat;
 }
 
 .medium_tile.staff
 {
-	background: #5179ae url(../img/staff.png) center center no-repeat;
+	background: #007ACC url(../img/staff.png) center center no-repeat;
 }
 
 .medium_tile.corps
 {
-	background: #5179ae url(../img/builds.png) center center no-repeat;
+	background: #007ACC url(../img/builds.png) center center no-repeat;
 }
 
 .medium_tile.details
 {
-	background: #5179ae url(../img/details.png) center center no-repeat;
+	background: #007ACC url(../img/details.png) center center no-repeat;
 }
 
 .medium_tile.miscellaneous
 {
-	background: #5179ae url(../img/misc.png) center center no-repeat;
+	background: #007ACC url(../img/misc.png) center center no-repeat;
 }
 
 .medium_tile:active
 {
-	background-color: #7AA2D7;
+	background-color: #007ACC;
 }
 
 input
 {
     margin-bottom: 2%;
+}
+
+.shedule_item td {
+    vertical-align: top;
+}
+
+.shedule_item {
+   margin-bottom: 10px;
+   margin-left: -12px;
+   margin-top: -12px;
+   width: 100%;
+   word-wrap: break-word;
+}
+
+.shedule_item td .mini-tile {
+    margin: 0;
+    float: none;
+}
+
+.shedule_item td h1 {
+    margin-top: 0;
+}
+
+.time_interval {
+    font-size: 11px;
+    text-align: right;
+}
+
+.practice {
+    background: url(../img/practice.png) left top repeat-y;
+}
+
+.lab {
+    background: url(../img/lab.png) left top repeat-y;
+}
+
+.lecture {
+    background: url(../img/lecture.png) left top repeat-y;
+}
+
+.more {
+    color: #aaa;
+    font-size: 11px;
+    line-height: 13px;
+    margin-top: 7px;
+}
+
+.subject {
+    font-size: 28px;
+    padding-left: 7px;
+    line-height: 20px;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.subject.none {
+    color: #555;
+}
+
+.subject:active {
+    background-color: #555;
+}
+
+.inactive {
+    color: #aaa;
 }
