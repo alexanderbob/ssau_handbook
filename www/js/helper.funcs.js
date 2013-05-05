@@ -33,5 +33,9 @@
             }
         };
         (document.body || head).appendChild(s);
+    },
+    UrlParam: function (name, url) {
+        var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec((url) ? url : window.location.href);
+        return results == null ? null : results[1] || 0;
     }
 };

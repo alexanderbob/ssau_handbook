@@ -5,6 +5,11 @@ $(document).delegate('#staff_info_page', 'pageinit', function (event) {
 $(document).delegate('#shedule_page', 'pageinit', function (event) {
     gShedule.init('shedule_table');
 });
+
+$(document).delegate('#sheduleEdit', 'pagebeforecreate', function (event) {
+    gSheduleEdit.init();
+});
+
 var gPhonegap = {
     // Application Constructor
     initialize: function () {
@@ -33,11 +38,40 @@ var gPhonegap = {
             //load all staff members from JSON folder
             for (var i = 0; i < gConst.STAFF_TRANSLIT.length; i++)
             {
-                gHelper.loadScript(gConst.PATHS.STAFF + gConst.STAFF_TRANSLIT[i] + '.js', gPhonegap.DATA.initialLoadCallback, i);
+                gHelper.loadScript(gConst.PATHS.STAFF + gConst.STAFF_TRANSLIT[i] + '.js', gPhonegap.DATA.staffLoadCallback, i);
+            }
+            gPhonegap.DATA.sheduleLoad();
+            //setTimeout(gPhonegap.DATA.sheduleLoad, 1000);
+        },
+        sheduleLoad: function () {
+            var shed = null;
+            //window.localStorage.clear();
+            try
+            {
+                shed = window.localStorage.getItem(gConst.PATHS.SHEDULE);
+                if (shed == null)
+                {
+                    console.log('Shedule was not found');
+                    gPhonegap.DATA.updateStorage(gConst.PATHS.SHEDULE, gConst.SHEDULE_STRUCTURE());
+                    gShedule.data = gConst.SHEDULE_STRUCTURE();
+                }
+                else
+                {
+                    gShedule.data = JSON.parse(shed);
+                    console.log('Shedule loaded!');
+                }
+            }
+            catch (er)
+            {
+                console.log(er.message);
             }
         },
-        initialLoadCallback: function (param) {
+        staffLoadCallback: function (param) {
             console.log('Staff by key ' + param + ' loaded!');
+        },
+        updateStorage: function (key, value) {
+            var toStore = (typeof value == 'object') ? JSON.stringify(value) : value;
+            window.localStorage.setItem(key, toStore);
         },
         searchStaff: function (str, callback, searchType) {
             if (searchType == gConst.STAFF_SEARCH_TYPE_TILE)
