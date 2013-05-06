@@ -60,10 +60,10 @@
             return;
         }
         var data = {
-            'subject': gSheduleEdit.form.subject.value,
-            'instructor': gSheduleEdit.form.teacher.value,
-            'room': gSheduleEdit.form.auditore.value,
-            'building': gSheduleEdit.form.corp.value,
+            'subject': gSheduleEdit.form.subject.value.trim(),
+            'instructor': gSheduleEdit.form.teacher.value.trim(),
+            'room': gSheduleEdit.form.auditore.value.trim(),
+            'building': gSheduleEdit.form.corp.value.trim(),
             'type': gSheduleEdit.form['select-choice-a'].value
         };
         gShedule.updateShedule(this.week, this.day, this.index, data);
@@ -72,16 +72,30 @@
     returnBack: function() {
         history.go(-1);
     },
+    clearShedule: function () {
+        if (confirm(gConst.LOCALE.CLEAR_SHEDULE_CONFIRM))
+        {
+            var data = {
+                'subject': '',
+                'instructor': '',
+                'room': '',
+                'building': '',
+                'type': ''
+            };
+            gShedule.updateShedule(this.week, this.day, this.index, data);
+            this.returnBack();
+        }
+    },
     verifyForm: function () {
-        if (this.form.subject.value.length == 0)
+        if (this.form.subject.value.trim().length == 0)
         {
             return gConst.ERR_NO_SUBJECT;
         }
-        if (this.form.teacher.value.length == 0)
+        if (this.form.teacher.value.trim().length == 0)
         {
             return gConst.ERR_NO_INSTRUCTOR;
         }
-        if (this.form.auditore.value.length == 0)
+        if (this.form.auditore.value.trim().length == 0)
         {
             return gConst.ERR_NO_ROOM;
         }

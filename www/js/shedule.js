@@ -5,11 +5,19 @@
         this.rootTable = document.getElementById(rootTableId);
         for (var i = 0; i < 7; i++)
         {
-            this.rootTable.rows[0].cells[0].appendChild(this.generateDayTable(0, i));
-            this.rootTable.rows[0].cells[1].appendChild(this.generateDayTable(1, i));
+            this.rootTable.appendChild(this.createNewRow());
+            this.rootTable.rows[i].cells[0].appendChild(this.generateDayTable(0, i));
+            this.rootTable.rows[i].cells[1].appendChild(this.generateDayTable(1, i));
         }
     },
-    subjectClick: function() {
+    subjectMouseDown: function() {
+        this.style.transform = 'scale(0.95)';
+        var self = this;
+        setTimeout(function (node) {
+            node.style.transform = 'scale(1)';
+        }, 200, self);
+    },
+    subjectClick: function () {
         gSheduleEdit.day = this.DAY;
         gSheduleEdit.week = this.WEEK;
         gSheduleEdit.index = this.INDEX;
@@ -19,10 +27,33 @@
             changeHash: true
         });
     },
+    createNewRow: function() {
+        var tr = gHelper.createNode('tr');
+        var td = gHelper.createNode('td', [{ name: 'style', value: 'width: 50%; vertical-align: top' }]);
+        tr.appendChild(td);
+        tr.appendChild( gHelper.createNode('td', [{ name: 'style', value: 'vertical-align: top' }]) );
+        return tr;
+    },
     updateShedule: function(week, day, index, data)
     {
         this.data[week][day][index] = data;
         gPhonegap.DATA.updateStorage(gConst.PATHS.SHEDULE, this.data);
+    },
+    fixStringWidth: function (str) {
+        var arr = str.split(' ');
+        var ret = '';
+        for (var i = 0; i < arr.length; i++)
+        {
+            if (arr[i].length > gConst.SHEDULE_MAX_WORD_LEN)
+            {
+                arr[i] = arr[i].substring(0, gConst.SHEDULE_MAX_WORD_LEN - 1);
+                arr[i] += '.';
+            }
+            ret = ret + arr[i] + ' ';
+        }
+        //delete last ' '
+        ret = ret.substring(0, ret.length - 1);
+        return ret;
     },
     //week - 0 when even, 1 when odd
     generateDayTable: function (week, day) {
@@ -65,7 +96,7 @@
                     { name: 'class', value: subj },
                     { name: 'onselectstart', value: 'return false' }
                 ]);
-                td.appendChild(document.createTextNode(shedule.subject));
+                td.appendChild(document.createTextNode( this.fixStringWidth(shedule.subject) ));
                 var more = shedule.instructor + '<br>';
                 if (shedule.room.length > 0)
                     more += shedule.room + ' ' + gConst.LOCALE.ROOM;
@@ -88,63 +119,11 @@
             td.WEEK = week;
             td.DAY = day;
             td.INDEX = i;
-            //a.appendChild(td);
             td.onclick = gShedule.subjectClick;
+            td.onmousedown = gShedule.subjectMouseDown;
             tr.appendChild(td);
             table.appendChild(tr);
         }
         return table;
-        /*<table class="shedule_item" cellspacing="10">
-                                    <tr>
-                                        <td colspan="2"><div class="mini_tile"><div class="mini_tile_name">ПН</div></div></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time_interval">8:15<br>9:50</td>
-                                        <td class="subject">Термодинамика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time_interval">9:50<br>11:35</td>
-                                        <td class="subject none">Нет занятий
-                                             <div class="more">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                   <tr>
-                                        <td class="time_interval">11:45<br>13:20</td>
-                                        <td class="subject lab">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time_interval">13:30<br>15:05</td>
-                                        <td class="subject lecture">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                   <tr>
-                                        <td class="time_interval">15:15<br>16:50</td>
-                                        <td class="subject lecture">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="time_interval">17:00<br>18:35</td>
-                                        <td class="subject">Математика
-                                            <div class="more">
-                                                Абрамов А.И.<br>212 ауд. 1 корпус
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>*/
     }
 };

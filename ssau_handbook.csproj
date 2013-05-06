@@ -222,6 +222,7 @@
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+    <Content Include="www\campus.html" />
     <Content Include="www\cordova-2.6.0.js" />
     <Content Include="www\css\test_css.css" />
     <Resource Include="www\css\default\images\ajax-loader.gif" />
@@ -262,6 +263,7 @@
     <Content Include="www\images\set.dark.png" />
     <Content Include="www\images\set.light.png" />
     <Content Include="www\img\builds.png" />
+    <Content Include="www\img\course.png" />
     <Content Include="www\img\details.png" />
     <Content Include="www\img\lab.png" />
     <Content Include="www\img\lecture.png" />
@@ -269,9 +271,11 @@
     <Content Include="www\img\misc.png" />
     <Content Include="www\img\practice.png" />
     <Content Include="www\img\shed.png" />
+    <Content Include="www\img\srw.png" />
     <Content Include="www\img\ssau_logo.png" />
     <Content Include="www\img\staff.png" />
     <Content Include="www\img\struct.png" />
+    <Content Include="www\img\themeLine.png" />
     <Content Include="www\JSON\a.js" />
     <Content Include="www\JSON\b.js" />
     <Content Include="www\JSON\ch.js" />
@@ -301,6 +305,7 @@
     <Content Include="www\JSON\z.js" />
     <Content Include="www\JSON\zh.js" />
     <Content Include="www\js\app-bar.js" />
+    <Content Include="www\js\campus.js" />
     <Content Include="www\js\const.js" />
     <Content Include="www\js\dateTimePicker.js" />
     <Content Include="www\js\helper.funcs.js" />
@@ -318,6 +323,7 @@
     <Content Include="www\js\phoneTheme.js" />
     <Content Include="www\js\progress-bar.js" />
     <Content Include="www\js\shedule.js" />
+    <Content Include="www\js\sheduleEdit.js" />
     <Content Include="www\js\staff.js" />
     <Content Include="www\js\toggle-button.js" />
     <Content Include="www\license.txt" />
@@ -334,8 +340,8 @@
     <Content Include="www\pages\switcher.html" />
     <Content Include="www\pages\toggle.html" />
     <Content Include="www\shedule.html" />
+    <Content Include="www\shedule_edit.html" />
     <Content Include="www\staff.html" />
-    <Content Include="www\staff_old.html" />
     <Content Include="www\wpThemeDemo.html" />
     <None Include="packages.config" />
     <None Include="VERSION" />

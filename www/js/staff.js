@@ -38,6 +38,7 @@
             }
             gStaff.staffResNode.appendChild(gStaff.createStaffDetail(result[i]));
         }
+        $(document).swipeleft();
     },
     searchByTile: function(searchStr) {
         gPhonegap.DATA.searchStaff(searchStr, gStaff.renderFoundResult, gConst.STAFF_SEARCH_TYPE_TILE);

@@ -68,7 +68,14 @@
     text-transform: uppercase;
 }
 
-.medium_tile.struct
+.medium_tile img
+{
+	position: absolute;
+	top: 25px;
+	left: 25px;
+}
+
+/*.medium_tile.struct
 {
 	background: #007ACC url(../img/struct.png) center center no-repeat;
 }
@@ -96,7 +103,7 @@
 .medium_tile.miscellaneous
 {
 	background: #007ACC url(../img/misc.png) center center no-repeat;
-}
+}*/
 
 .medium_tile:active
 {
@@ -173,9 +180,9 @@ input
     color: #555;
 }
 
-.subject:active {
+/*.subject:active {
     background-color: #555;
-}
+}*/
 
 .inactive {
     color: #aaa;
