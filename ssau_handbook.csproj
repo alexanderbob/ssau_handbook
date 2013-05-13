@@ -255,6 +255,7 @@
     <Content Include="www\css\wp\jquery.mobile.wp.theme.css" />
     <Content Include="www\css\wp\jquery.mobile.wp.theme.init.js" />
     <Content Include="www\css\wp\jquery.mobile.wp.theme.new.css" />
+    <Content Include="www\details.html" />
     <Content Include="www\faculties.html" />
     <Content Include="www\images\appbar.cancel.rest.dark.png" />
     <Content Include="www\images\appbar.cancel.rest.light.png" />
@@ -271,6 +272,7 @@
     <Content Include="www\img\lab.png" />
     <Content Include="www\img\lecture.png" />
     <Content Include="www\img\logo.png" />
+    <Content Include="www\img\map.png" />
     <Content Include="www\img\misc.png" />
     <Content Include="www\img\practice.png" />
     <Content Include="www\img\shed.png" />
@@ -331,6 +333,8 @@
     <Content Include="www\js\staff.js" />
     <Content Include="www\js\toggle-button.js" />
     <Content Include="www\license.txt" />
+    <Content Include="www\map.html" />
+    <Content Include="www\misc.html" />
     <Content Include="www\pages\appbar.html" />
     <Content Include="www\pages\buttons.html" />
     <Content Include="www\pages\date-time.html" />

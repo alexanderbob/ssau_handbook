@@ -13,7 +13,7 @@
     createBuilding: function (data) {
         var div = gHelper.createNode('div', [{ name: 'class', value: 'building' }]);
         var tile = gHelper.createNode('div', [{ name: 'class', value: 'mini_tile campus' }]);
-        var name = gHelper.createNode('div', [{ name: 'class', value: 'b_name' }], data.name);
+        var name = gHelper.createNode('div', [{ name: 'class', value: 'b_name' }], (data.name.length < 3) ? data.name : '');
         tile.appendChild(name);
         div.appendChild(tile);
         var info = gHelper.createNode('div', [{ name: 'class', value: 'b_info' }], gConst.LOCALE.CAMPUS[data.type]);

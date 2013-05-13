@@ -18,10 +18,6 @@ $(document).delegate('#campusPage', 'pagebeforecreate', function (event) {
     gCampus.init('campusContentRoot');
 });
 
-$(document).delegate('#campusPage', 'pagebeforecreate', function (event) {
-    gCampus.init('campusContentRoot');
-});
-
 $(document).delegate('#departmentsPage', 'pagebeforecreate', function (event) {
     gDepartments.init('departmentsRoot');
 });
