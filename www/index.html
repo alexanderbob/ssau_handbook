@@ -118,14 +118,21 @@
     </head>
     <body>
         <div data-role="page" class="type-interior" data-theme="a">
-		    <div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false" style="height: 70px">
-                <div style="margin-left: 24px" class="header_ssau"><img style="float:left;" src="img/ssau_logo.png"><div>Самарский Государственный<br><span style="letter-spacing: 5px;">Аэрокосмический</span><br>Университет им. С. П. Королёва</div></div>
-	        </div>
+		    <div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false" style="height: 70px;">
+                <div style="margin-left: 24px; float: left;" class="header_ssau">
+                    <table style="table-layout: fixed">
+                        <tr>
+                        <td style="width: 50%"><img style="float:left;" src="img/ssau_logo.png"><div style="float:left">Самарский Государственный<br><span style="letter-spacing: 5px;">Аэрокосмический</span><br>Университет им. С. П. Королёва</div></td>
+                        <td><h1 style="margin-top: 10px; margin-left: 20px; color: #000; font-size: 50px; text-transform: lowercase; display: block">новости</h1></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
 	        <div data-role="content" data-theme="a">
                 <div data-role="fieldcontain">
-                    <table data-role="pageSlider">
+                    <table data-role="pageSlider" style="table-layout: fixed; width: 100%">
                         <tr>
-                            <td>
+                            <td style="width: 50%; vertical-align: top">
                                 <a href="structure.html" data-transition="none" data-theme="a">
                                     <div class="medium_tile struct"><img src="img/struct.png" height="80" width="80"><div class="medium_tile_name">Структура</div></div>
                                 </a>
@@ -145,13 +152,33 @@
                                     <div class="medium_tile miscellaneous"><img src="img/misc.png" height="85" width="85"><div class="medium_tile_name">Разное</div></div>
                                 </a>
                             </td>
-                            <td>
-                             <div class="medium_tile struct"><div class="medium_tile_name">Структура</div></div>
-                                <div class="medium_tile shedule"><div class="medium_tile_name">Расписание</div></div>
-                                <div class="medium_tile staff"><div class="medium_tile_name">Преподаватели</div></div>
-                                <div class="medium_tile corps"><div class="medium_tile_name">Корпусы</div></div>
-                                <div class="medium_tile details"><div class="medium_tile_name">Реквизиты</div></div>
-                                <div class="medium_tile miscellaneous"><div class="medium_tile_name">Разное</div></div>
+                            <td style="vertical-align: top;" id="indexNewsCell">
+                                <!--<div onclick="gHelper.getNews();" style="width: 400px;">Get news</div>-->
+                                <a data-inline="true" onclick="gHelper.getNews()"
+                                       data-transition="none" data-role="button"
+                                       data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" 
+                                       data-theme="a" style="width: 100%;">Обновить
+                                </a>
+                                <!--<div class="new">
+                                    <div class="new_date">33 хуебря 21ы1 года</div>
+                                    <div class="new_h">Состоялось охуенное меропричтие м охуенными людь что все аж охуели и охуевали. АЙ ДОНТ КЭЭЭЭЭР!</div>
+                                </div>
+                                <div class="new">
+                                    <div class="new_date">33 хуебря 21ы1 года</div>
+                                    <div class="new_h">Состоялось охуенное меропричтие м охуенными людь что все аж охуели и охуевали. АЙ ДОНТ КЭЭЭЭЭР!</div>
+                                </div>
+                                <div class="new">
+                                    <div class="new_date">33 хуебря 21ы1 года</div>
+                                    <div class="new_h">Состоялось охуенное меропричтие м охуенными людь что все аж охуели и охуевали. АЙ ДОНТ КЭЭЭЭЭР!</div>
+                                </div>
+                                <div class="new">
+                                    <div class="new_date">33 хуебря 21ы1 года</div>
+                                    <div class="new_h">Состоялось охуенное меропричтие м охуенными людь что все аж охуели и охуевали. АЙ ДОНТ КЭЭЭЭЭР!</div>
+                                </div>
+                                <div class="new">
+                                    <div class="new_date">33 хуебря 21ы1 года</div>
+                                    <div class="new_h">Состоялось охуенное меропричтие м охуенными людь что все аж охуели и охуевали. АЙ ДОНТ КЭЭЭЭЭР!</div>
+                                </div>-->
                             </td>
                         </tr>
                     </table>

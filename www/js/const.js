@@ -4,6 +4,8 @@
     MYSQL_DB_VER: '1.0',
     MYSQL_TABLE_STAFF_NAME: 'ssau_staff',
 
+    NEWS_COUNT: 5,
+
     STAFF_LETTERS: [
         "а", "б", "в", "г", "д", "е", "ж",
         "з", "и", "к", "л", "м", "н", "о",
@@ -54,7 +56,8 @@
     DEPARTMENTS: [],
     PATHS: {
         STAFF: 'JSON/',
-        SHEDULE: 'SHEDULE'
+        SHEDULE: 'SHEDULE',
+        NEWS: 'NEWS'
     },
     debug: true,
     LOCALE: {

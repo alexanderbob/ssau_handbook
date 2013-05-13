@@ -267,3 +267,19 @@ input
     font-size: 26px;
     line-height: 18px;
 }
+
+.new .new_date {
+    color: #666;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.new .new_h {
+    font-size: 14px;
+    padding-left: 5px;
+    background: url(../img/themeLine.png) left top repeat-y;
+}
+
+.new {
+    margin-bottom: 20px;
+}
