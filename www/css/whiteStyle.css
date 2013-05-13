@@ -249,6 +249,15 @@ input
     font-size: 13px;
 }
 
+.sites_block .b_info_block {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.prorectors div {
+    /*margin-bottom: 10px;*/
+}
+
 .b_info_header {
     position: absolute;
     left: 0;

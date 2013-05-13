@@ -24,19 +24,11 @@
   <plugins>
     <plugin name="Device"/>
     <plugin name="Logger"/>
-    <plugin name="Compass"/>
-    <plugin name="Accelerometer"/>
-    <plugin name="Camera"/>
     <plugin name="NetworkStatus"/>
-    <plugin name="Contacts"/>
     <plugin name="DebugConsole" />
     <plugin name="Echo"/>
     <plugin name="File"/>
-    <plugin name="FileTransfer"/>
-    <plugin name="Geolocation"/>
     <plugin name="Notification"/>
-    <plugin name="Media"/>
-    <plugin name="Capture"/>
     <plugin name="SplashScreen"/>
     <plugin name="Battery"/>
     <plugin name="Globalization"/>

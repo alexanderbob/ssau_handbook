@@ -222,6 +222,7 @@
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+    <Content Include="www\about.html" />
     <Content Include="www\campus.html" />
     <Content Include="www\cordova-2.6.0.js" />
     <Content Include="www\css\test_css.css" />
@@ -314,6 +315,7 @@
     <Content Include="www\js\const.js" />
     <Content Include="www\js\dateTimePicker.js" />
     <Content Include="www\js\departments.js" />
+    <Content Include="www\js\faculties.js" />
     <Content Include="www\js\helper.funcs.js" />
     <Content Include="www\js\index.js" />
     <Content Include="www\js\jquery.cordova.wp.themeswitcher.js" />
@@ -350,6 +352,7 @@
     <Content Include="www\rectors.html" />
     <Content Include="www\shedule.html" />
     <Content Include="www\shedule_edit.html" />
+    <Content Include="www\sites.html" />
     <Content Include="www\staff.html" />
     <Content Include="www\structure.html" />
     <Content Include="www\units.html" />

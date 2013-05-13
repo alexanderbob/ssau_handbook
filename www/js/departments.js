@@ -29,7 +29,7 @@
             p.appendChild(h);
             p.onselectstart = gHelper.onselectstart;
             li.appendChild(p);
-            var p = gHelper.createNode('p', [{ name: 'class', value: 'info' }], depart.leader);
+            var p = gHelper.createNode('p', [{ name: 'class', value: 'info' }], (depart.leader) ? depart.leader : '');
             p.appendChild(document.createElement('br'));
             if (depart.address)
             {
@@ -38,18 +38,23 @@
             }
             if (depart.tel)
             {
-                var text = gConst.LOCALE.TEL + ': ' + depart.tel[0];
-                for (var j = 1; j < depart.tel.length; j++)
-                    text += ', ' + depart.tel[j];
-                p.appendChild(document.createTextNode(text));
+                p.appendChild(document.createTextNode(gConst.LOCALE.TEL + ' '));
+                for (var i = 0; i < depart.tel.length; i++)
+                {
+                    p.appendChild(gHelper.createNode('a', [{ name: 'href', value: 'tel:' + depart.tel[i] }], depart.tel[i]));
+                    p.appendChild(document.createTextNode('; '));
+                }
                 p.appendChild(document.createElement('br'));
             }
             if (depart.email)
             {
-                var text = gConst.LOCALE.EMAIL + ': ' + depart.email[0];
-                for (var j = 1; j < depart.email.length; j++)
-                    text += ', ' + depart.email[j];
-                p.appendChild(document.createTextNode(text));
+                p.appendChild(document.createTextNode(gConst.LOCALE.EMAIL + ': '));
+                for (var j = 0; j < depart.email.length; j++)
+                {
+                    var a = gHelper.createNode('a', [{ name: 'href', value: 'mailto:' + depart.email[j] }]);
+                    a.appendChild(document.createTextNode(depart.email[j]));
+                    p.appendChild(a);
+                }
                 p.appendChild(document.createElement('br'));
             }
             p.onselectstart = gHelper.onselectstart;

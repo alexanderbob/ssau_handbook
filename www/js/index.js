@@ -18,6 +18,10 @@ $(document).delegate('#campusPage', 'pagebeforecreate', function (event) {
     gCampus.init('campusContentRoot');
 });
 
+$(document).delegate('#facultiesPage', 'pagebeforecreate', function (event) {
+    gFacs.init('facultiesTable');
+});
+
 $(document).delegate('#departmentsPage', 'pagebeforecreate', function (event) {
     gDepartments.init('departmentsRoot');
 });
@@ -53,7 +57,16 @@ var gPhonegap = {
                 gHelper.loadScript(gConst.PATHS.STAFF + gConst.STAFF_TRANSLIT[i] + '.js', gPhonegap.DATA.staffLoadCallback, i);
             }
             gPhonegap.DATA.sheduleLoad();
+            gPhonegap.DATA.newsLoad();
             //setTimeout(gPhonegap.DATA.sheduleLoad, 1000);
+        },
+        newsLoad: function () {
+            var data = null;
+            data = window.localStorage.getItem(gConst.PATHS.NEWS);
+            if (data != null)
+            {
+                gHelper.updateNews(JSON.parse(data));
+            }
         },
         sheduleLoad: function () {
             var shed = null;

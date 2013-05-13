@@ -1,6 +1,7 @@
 ﻿var gHelper = {
     newsRequestSent: false,
     newsNode: null,
+    timeoutID: 0,
     trace: function(msg)
     {
         if (gConst.debug)
@@ -9,6 +10,11 @@
     },
     onselectstart: function() {
         return false;
+    },
+    sitesClick: function(event) {
+        var div = event.currentTarget;
+        var href = div.children[1].innerHTML;
+        window.open(href, '_system');
     },
     subjectMouseDown: function (event, target) {
         var self = (target) ? target : this;
@@ -51,23 +57,34 @@
         var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec((url) ? url : window.location.href);
         return results == null ? null : results[1] || 0;
     },
-    getNews: function () {
+    getNews: function (event) {
         if (!gHelper.newsRequestSent)
         {
+            var btn = event.currentTarget;
+            btn.innerHTML = gConst.LOCALE.LOADING;
             gHelper.newsRequestSent = true;
+            console.log('Sending');
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open('GET', 'http://www.ssau.ru/news/', true);
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4)
                 {
+                    clearTimeout(gHelper.timeoutID);
                     if (xmlhttp.status == 200)
                     {
                         gHelper.parseNews(xmlhttp.responseText);
                     }
+                    console.log('Got response');
                     gHelper.newsRequestSent = false;
+                    btn.innerText = gConst.LOCALE.REFRESH;
                 }
             };
             xmlhttp.send(null);
+            gHelper.timeoutID = setTimeout(function (btn) {
+                alert(gConst.LOCALE.REQUEST_TIMEOUT);
+                gHelper.newsRequestSent = false;
+                btn.innerText = gConst.LOCALE.REFRESH;
+            }, gConst.NEWS_TIMEOUT, btn);
         }
     },
     updateNews: function (data) {
@@ -86,6 +103,7 @@
             var div = this.createNode('div', [{ name: 'class', value: 'new_h' }], data[i].title);
             root.appendChild(div);
             root.HREF = data[i].href;
+            root.onmousedown = gHelper.subjectMouseDown;
             root.onclick = function (event) {
                 gHelper.subjectMouseDown(event, event.currentTarget);
                 window.open('http://ssau.ru/' + event.currentTarget.HREF, '_system');
