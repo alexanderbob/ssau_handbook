@@ -48,13 +48,15 @@
     CAMPUS_TYPE_SCIENCE: 3,
     //init below
     CAMPUS: [],
-
+    DEPARTMENTS: [],
     PATHS: {
         STAFF: 'JSON/',
         SHEDULE: 'SHEDULE'
     },
     debug: true,
     LOCALE: {
+        ADDRESS: 'Адрес',
+        EMAIL: 'e-mail',
         BUILDING: 'дом',
         BUILDING_LETTER: 'литера',
         TEL: 'тел.',
@@ -82,27 +84,77 @@
     }
 };
 
-gConst.LOCALE.ERROR[gConst.ERR_NO_SUBJECT] = 'Не введено имя предмета';
-gConst.LOCALE.ERROR[gConst.ERR_NO_INSTRUCTOR] = 'Не введено имя преподавателя';
-gConst.LOCALE.ERROR[gConst.ERR_NO_ROOM] = 'Не введена аудитория';
+/*
+========================= DEPARTMENTS START =================
+*/
 
-gConst.LOCALE.SHEDULE_TYPE[gConst.SHEDULE_UNK] = 'Другое';
-gConst.LOCALE.SHEDULE_TYPE[gConst.SHEDULE_LAB] = 'Лабораторная';
-gConst.LOCALE.SHEDULE_TYPE[gConst.SHEDULE_LECTURE] = 'Лекция';
-gConst.LOCALE.SHEDULE_TYPE[gConst.SHEDULE_PRACTICE] = 'Практика';
-gConst.LOCALE.SHEDULE_TYPE[gConst.SHEDULE_NIR] = 'НИР';
-gConst.LOCALE.SHEDULE_TYPE[gConst.SHEDULE_COURSE] = 'Курсовая';
+gConst.DEPARTMENTS[3] = {
+    number: '4',
+    deps: {
+        0: {
+            nameHTML: 'Обработка металлов <br>давлением',
+            leader: 'Зав. Гречников Федор Васильевич',
+            address: 'ул.Московское Шоссе д.34, СГАУ, Кафедра обработки металлов давлением',
+            tel: ['8462357070'],
+            email: ['omd@ssau.ru']
+        },
+        1: {
+            nameHTML: 'Технология металлов и <br>авиационного материаловедения',
+            leader: 'Зав. Михеев Владимир Александрович',
+            address: 'ул. Московское шоссе, 34, кафедра ТМиАМ',
+            tel: ['8462674640', '2674641']
+        }
+    }
+};
 
-gConst.SHEDULE_TYPE_CLASSES[gConst.SHEDULE_LECTURE] = ' lecture';
-gConst.SHEDULE_TYPE_CLASSES[gConst.SHEDULE_LAB] = ' lab';
-gConst.SHEDULE_TYPE_CLASSES[gConst.SHEDULE_PRACTICE] = ' practice';
-gConst.SHEDULE_TYPE_CLASSES[gConst.SHEDULE_UNK] = '';
-gConst.SHEDULE_TYPE_CLASSES[gConst.SHEDULE_NIR] = ' srw';
-gConst.SHEDULE_TYPE_CLASSES[gConst.SHEDULE_COURSE] = ' course';
+gConst.DEPARTMENTS[5] = {
+    number: '6',
+    deps: {
+        0: {
+            nameHTML: 'Геоинформатика и <br>информационная безопасность',
+            leader: 'Зав. СЕРГЕЕВ Владислав Викторович, д.т.н.',
+            address: 'ул. Молодогвардейская, 151, корп. 1, комн. 230',
+            tel: ['8463322994'],
+            email: ['vserg@smr.ru']
+        },
+        1: {
+            nameHTML: 'Информационные системы и <br>технологии',
+            leader: 'Зав. ПРОХОРОВ Сергей Антонович',
+            //address: '',
+            tel: ['2674672', '2674671'],
+            //email: ''
+        },
+        2: {
+            nameHTML: 'Прикладная математика',
+            leader: 'Зав. ЖДАНОВ Александр Иванович',
+            address: 'ул. Молодогвардейская, 151, корп. № 1, комн. 214',
+            tel: ['8463325607'],
+            email: ['zhdanov@ssau.ru']
+        },
+        3: {
+            nameHTML: 'Программные системы',
+            leader: 'КОВАРЦЕВ Александр Николаевич',
+            address: 'ул. Гая, 41, корп. № 14, комн. 515',
+            tel: ['8462709087', '2674673']
+        },
+        4: {
+            nameHTML: 'Техническая кибернетика',
+            leader: 'Сойфер Виктор Александрович',
+            address: 'ул Молодогвардейская,дом 151, ауд. 317',
+            tel: ['8462325786'],
+            email: ['soifer@ssau.ru', 'degtyarev@ssau.ru']
+        }
+    }
+};
 
-gConst.LOCALE.CAMPUS[gConst.CAMPUS_TYPE_SCIENCE] = 'Научный корпус';
-gConst.LOCALE.CAMPUS[gConst.CAMPUS_TYPE_SPORT] = 'Спортивный корпус';
-gConst.LOCALE.CAMPUS[gConst.CAMPUS_TYPE_TRAINING] = 'Учебный корпус';
+/*
+========================= DEPARTMENTS END ===================
+*/
+
+
+/*
+========================== CAMPUS START ======================
+*/
 
 gConst.CAMPUS[0] = {
     name: '1',
@@ -111,7 +163,7 @@ gConst.CAMPUS[0] = {
     cathedrals: ['Техническая кибернетика', 'Геоинформатика', 'Коммуникационные системы и сети'],
     decans: ['Факультет информатики (6)'],
     transport: [
-        { stopName: 'Самарская площадь', bus: [2, 23, 41, 46, 47, 50, 217], tram: [5, 20, '20к', 22]},
+        { stopName: 'Самарская площадь', bus: [2, 23, 41, 46, 47, 50, 217], tram: [5, 20, '20к', 22] },
         { stopName: 'Волжский проспект', bus: ['247', '297'], trollbus: [19, 20] }
     ]
 };
@@ -186,6 +238,39 @@ gConst.CAMPUS[4] = {
         }
     ]
 };
+
+/*
+========================== CAMPUS END ======================
+*/
+
+/*
+========================== LOCALE START =====================
+*/
+gConst.LOCALE.ERROR[gConst.ERR_NO_SUBJECT] = 'Не введено имя предмета';
+gConst.LOCALE.ERROR[gConst.ERR_NO_INSTRUCTOR] = 'Не введено имя преподавателя';
+gConst.LOCALE.ERROR[gConst.ERR_NO_ROOM] = 'Не введена аудитория';
+
+gConst.LOCALE.SHEDULE_TYPE[gConst.SHEDULE_UNK] = 'Другое';
+gConst.LOCALE.SHEDULE_TYPE[gConst.SHEDULE_LAB] = 'Лабораторная';
+gConst.LOCALE.SHEDULE_TYPE[gConst.SHEDULE_LECTURE] = 'Лекция';
+gConst.LOCALE.SHEDULE_TYPE[gConst.SHEDULE_PRACTICE] = 'Практика';
+gConst.LOCALE.SHEDULE_TYPE[gConst.SHEDULE_NIR] = 'НИР';
+gConst.LOCALE.SHEDULE_TYPE[gConst.SHEDULE_COURSE] = 'Курсовая';
+
+gConst.SHEDULE_TYPE_CLASSES[gConst.SHEDULE_LECTURE] = ' lecture';
+gConst.SHEDULE_TYPE_CLASSES[gConst.SHEDULE_LAB] = ' lab';
+gConst.SHEDULE_TYPE_CLASSES[gConst.SHEDULE_PRACTICE] = ' practice';
+gConst.SHEDULE_TYPE_CLASSES[gConst.SHEDULE_UNK] = '';
+gConst.SHEDULE_TYPE_CLASSES[gConst.SHEDULE_NIR] = ' srw';
+gConst.SHEDULE_TYPE_CLASSES[gConst.SHEDULE_COURSE] = ' course';
+
+gConst.LOCALE.CAMPUS[gConst.CAMPUS_TYPE_SCIENCE] = 'Научный корпус';
+gConst.LOCALE.CAMPUS[gConst.CAMPUS_TYPE_SPORT] = 'Спортивный корпус';
+gConst.LOCALE.CAMPUS[gConst.CAMPUS_TYPE_TRAINING] = 'Учебный корпус';
+
+/*
+=========================== LOCALE END ==========================
+*/
 
 gConst.SHEDULE_STRUCTURE = function () {
     return {

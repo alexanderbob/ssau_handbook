@@ -1,6 +1,8 @@
 ﻿$(document).delegate('[data-role=page]', 'pageinit', function (event) {
     $('.medium_tile').on('mousedown', function () {
-        $(this).animate(
+        this.style.transform = 'scale(0.95)';
+        setTimeout(miniTileMouseDownTimeout, 200, this);
+        /*$(this).animate(
             { borderSpacing: 2 },
             {
                 step: function (now, fx) {
@@ -18,7 +20,7 @@
                 duration: 'slow'
             },
             'linear'
-        );
+        );*/
     });
 
     $('.mini_tile').on('mousedown', function () {

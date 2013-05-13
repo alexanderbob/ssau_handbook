@@ -5,6 +5,16 @@
             //alert(msg);
             console.log(msg);
     },
+    onselectstart: function() {
+        return false;
+    },
+    subjectMouseDown: function (event, target) {
+        var self = (target) ? target : this;
+        self.style.transform = 'scale(0.95)';
+        setTimeout(function (node) {
+            node.style.transform = 'scale(1)';
+        }, 200, self);
+    },
     createNode: function (strName, arrAttr, innerHTML) {
         var node = document.createElement(strName);
         if (arrAttr)
@@ -18,6 +28,7 @@
         {
             node.innerHTML = innerHTML;
         }
+        node.onselectstart = function () { return false; };
         return node;
     },
     loadScript: function(src, callback, param) {

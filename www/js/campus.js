@@ -10,13 +10,6 @@
             this.table.rows[0].cells[0].appendChild( this.createBuilding(gConst.CAMPUS[i]) );
         }
     },
-    subjectMouseDown: function () {
-        this.style.transform = 'scale(0.95)';
-        var self = this;
-        setTimeout(function (node) {
-            node.style.transform = 'scale(1)';
-        }, 200, self);
-    },
     createBuilding: function (data) {
         var div = gHelper.createNode('div', [{ name: 'class', value: 'building' }]);
         var tile = gHelper.createNode('div', [{ name: 'class', value: 'mini_tile campus' }]);
@@ -39,7 +32,7 @@
             gCampus.table.rows[0].cells[1].appendChild(gCampus.showMoreInfo(data));
             $(document).swipeleft();
         };
-        div.onmousedown = gCampus.subjectMouseDown;
+        div.onmousedown = gHelper.subjectMouseDown;
         return div;
     },
 

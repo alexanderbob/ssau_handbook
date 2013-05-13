@@ -240,6 +240,7 @@
     <Content Include="www\css\mobiscroll-1.5.3.css" />
     <Content Include="www\css\progress-bar.css" />
     <Content Include="www\css\toggle-button.css" />
+    <Content Include="www\css\whiteStyle.css" />
     <Content Include="www\css\wp\images\ajax-loader.png" />
     <Content Include="www\css\wp\images\check-black.png" />
     <Content Include="www\css\wp\images\check-white.png" />
@@ -253,6 +254,8 @@
     <Content Include="www\css\wp\images\radiobtn-white.png" />
     <Content Include="www\css\wp\jquery.mobile.wp.theme.css" />
     <Content Include="www\css\wp\jquery.mobile.wp.theme.init.js" />
+    <Content Include="www\css\wp\jquery.mobile.wp.theme.new.css" />
+    <Content Include="www\faculties.html" />
     <Content Include="www\images\appbar.cancel.rest.dark.png" />
     <Content Include="www\images\appbar.cancel.rest.light.png" />
     <Content Include="www\images\appbar.check.rest.dark.png" />
@@ -308,6 +311,7 @@
     <Content Include="www\js\campus.js" />
     <Content Include="www\js\const.js" />
     <Content Include="www\js\dateTimePicker.js" />
+    <Content Include="www\js\departments.js" />
     <Content Include="www\js\helper.funcs.js" />
     <Content Include="www\js\index.js" />
     <Content Include="www\js\jquery.cordova.wp.themeswitcher.js" />
@@ -339,9 +343,12 @@
     <Content Include="www\pages\progress-bar.html" />
     <Content Include="www\pages\switcher.html" />
     <Content Include="www\pages\toggle.html" />
+    <Content Include="www\rectors.html" />
     <Content Include="www\shedule.html" />
     <Content Include="www\shedule_edit.html" />
     <Content Include="www\staff.html" />
+    <Content Include="www\structure.html" />
+    <Content Include="www\units.html" />
     <Content Include="www\wpThemeDemo.html" />
     <None Include="packages.config" />
     <None Include="VERSION" />
