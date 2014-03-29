@@ -2,10 +2,9 @@
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="ru-RU" />
   <Languages xmlns="">
-    <Language code="ru" />
-    <Language code="ru-RU" />
+    <Language code="en-US" />
   </Languages>
-  <App xmlns="" ProductID="{13b7ec4f-d4cf-422b-90ef-cd9c48af66ab}" Title="Справочник СГАУ" RuntimeType="Silverlight" Version="1.0.0.2" Genre="apps.normal" Author="Alexander Bobryshev" BitsPerPixel="32" Description="Подробный справочник Самарского Государственного Аэрокосмического Университета, в котором содержится вся необходимая для студента информация, а также полезный функционал: расписание, карта и другое.&#xD;&#xA;" Publisher="SSAU" PublisherID="{db093ed5-53b1-45f7-af72-751e8f36ab80}">
+  <App xmlns="" ProductID="{13b7ec4f-d4cf-422b-90ef-cd9c48af66ab}" Title="Справочник СГАУ" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Alexander Bobryshev" BitsPerPixel="32" Description="Apache Cordova for Windows Phone" Publisher="SSAU" PublisherID="{db093ed5-53b1-45f7-af72-751e8f36ab80}">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_IDENTITY_DEVICE" />
@@ -20,17 +19,23 @@
     <Tokens>
       <PrimaryToken TokenID="ssau_handbookToken" TaskName="_default">
         <TemplateFlip>
-          <SmallImageURI IsRelative="true" IsResource="false">Background.png</SmallImageURI>
+          <SmallImageURI IsResource="false" IsRelative="true">Background.png</SmallImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Background.png</BackgroundImageURI>
-          <Title>Справочник СГАУ</Title>
+          <BackgroundImageURI IsResource="false" IsRelative="true">Background.png</BackgroundImageURI>
+          <Title>ssau_handbook</Title>
           <BackContent>
           </BackContent>
-          <BackBackgroundImageURI IsRelative="true" IsResource="false">
+          <BackBackgroundImageURI>
           </BackBackgroundImageURI>
           <BackTitle>
           </BackTitle>
-          <DeviceLockImageURI IsRelative="true" IsResource="false">
+          <LargeBackgroundImageURI>
+          </LargeBackgroundImageURI>
+          <LargeBackContent>
+          </LargeBackContent>
+          <LargeBackBackgroundImageURI>
+          </LargeBackBackgroundImageURI>
+          <DeviceLockImageURI>
           </DeviceLockImageURI>
           <HasLarge>false</HasLarge>
         </TemplateFlip>

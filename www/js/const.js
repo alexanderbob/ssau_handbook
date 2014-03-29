@@ -38,7 +38,9 @@
         { start: '11:45', end: '13:20' },
         { start: '13:30', end: '15:05' },
         { start: '15:15', end: '16:50' },
-        { start: '17:00', end: '18:35' }
+        { start: '17:00', end: '18:35' },
+        { start: '18:40', end: '20:15' },
+        { start: '20:25', end: '22:00' }
     ],
     //init below
     SHEDULE_TYPE_CLASSES: {},
@@ -51,6 +53,7 @@
     CAMPUS_TYPE_SCIENCE: 3,
     CAMPUS_TYPE_SERVICE: 4,
     CAMPUS_TYPE_WAR: 5,
+    CAMPUS_TYPE_CULTURE: 6,
 
     //init below
     CAMPUS: [],
@@ -77,6 +80,7 @@
         REQUEST_TIMEOUT: 'Превышено время ожидания ответа от сервера. Проверьте соединение с интернетом',
         ADDRESS: 'Адрес',
         EMAIL: 'e-mail',
+        CORPUS: 'корп.',
         BUILDING: 'дом',
         BUILDING_LETTER: 'литера',
         TEL: 'тел.',
@@ -93,14 +97,13 @@
         THREE_CHARS_MIN: 'Введите минимум три символа',
         WEEK_DAYS: ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
         ROOM: 'ауд.',
-        BUILDING: 'дом',
         NO_LESSON: 'Нет занятий',
         LESSON_TYPE: 'Тип занятия',
         //init below
         SHEDULE_TYPE: {},
         CAMPUS: {},
         ERROR: {},
-        CLEAR_SHEDULE_CONFIRM: 'Вы действительно хотите очистить расписание?'
+        CLEAR_SHEDULE_CONFIRM: 'Вы действительно хотите очистить эту запись?'
     }
 };
 
@@ -559,8 +562,9 @@ gConst.CAMPUS[10] = {
 };
 
 gConst.CAMPUS[11] = {
+    tileName: 'дк',
     name: '16',
-    type: gConst.CAMPUS_TYPE_TRAINING,
+    type: gConst.CAMPUS_TYPE_CULTURE,
     address: { street: 'ул. Московское шоссе', house: '34', letter: 'к16' },
     transport: [
         {
@@ -575,7 +579,7 @@ gConst.CAMPUS[11] = {
 
 gConst.CAMPUS[12] = {
     name: 'АХЧ',
-    type: gConst.CAMPUS_TYPE_TRAINING,//не тот тип
+    type: gConst.CAMPUS_TYPE_SERVICE,//не тот тип
     address: { street: 'ул. Врубеля', house: '25', letter: '' },
     transport: [
         {
@@ -589,6 +593,7 @@ gConst.CAMPUS[12] = {
 };
 
 gConst.CAMPUS[13] = {
+    tileName: 'вк',
     name: 'военная кафедра',
     type: gConst.CAMPUS_TYPE_TRAINING,
     address: { street: 'ул. Врубеля', house: '27', letter: '' },
@@ -603,6 +608,7 @@ gConst.CAMPUS[13] = {
     ]
 };
 
+/*
 gConst.CAMPUS[14] = {
     name: 'крытый манеж',
     type: gConst.CAMPUS_TYPE_SPORT,
@@ -647,7 +653,7 @@ gConst.CAMPUS[16] = {
         }
     ]	
 };
-
+*/
 /*
 ========================== CAMPUS END ======================
 */
@@ -836,11 +842,13 @@ gConst.SHEDULE_TYPE_CLASSES[gConst.SHEDULE_COURSE] = ' course';
 gConst.LOCALE.CAMPUS[gConst.CAMPUS_TYPE_SCIENCE] = 'Научный корпус';
 gConst.LOCALE.CAMPUS[gConst.CAMPUS_TYPE_SPORT] = 'Спортивный корпус';
 gConst.LOCALE.CAMPUS[gConst.CAMPUS_TYPE_TRAINING] = 'Учебный корпус';
+gConst.LOCALE.CAMPUS[gConst.CAMPUS_TYPE_SERVICE] = 'Административный корпус';
+gConst.LOCALE.CAMPUS[gConst.CAMPUS_TYPE_CULTURE] = 'Дом культуры';
 
 /*
 =========================== LOCALE END ==========================
 */
-
+/*
 gConst.SHEDULE_STRUCTURE = function () {
     return {
         0: {
@@ -850,7 +858,9 @@ gConst.SHEDULE_STRUCTURE = function () {
                 2: { subject: '', instructor: '', room: '', building: '', type: '' },
                 3: { subject: '', instructor: '', room: '', building: '', type: '' },
                 4: { subject: '', instructor: '', room: '', building: '', type: '' },
-                5: { subject: '', instructor: '', room: '', building: '', type: '' }
+                5: { subject: '', instructor: '', room: '', building: '', type: '' },
+                6: { subject: '', instructor: '', room: '', building: '', type: '' },
+                7: { subject: '', instructor: '', room: '', building: '', type: '' }
             },
             1: {
                 0: { subject: 'Параллельное программирование', instructor: 'Козлова', room: '303', building: '1', type: '2' },
@@ -858,7 +868,9 @@ gConst.SHEDULE_STRUCTURE = function () {
                 2: { subject: 'Численные методы / Теория игр', instructor: 'Сметанникова Елена Николаевна / Головашкин', room: '212', building: '1', type: '0' },
                 3: { subject: 'Крмпьютерные телекоммуникации', instructor: 'Суханов', room: '220', building: '1', type: '2' },
                 4: { subject: 'Крмпьютерные телекоммуникации', instructor: 'Суханов', room: '220', building: '1', type: '2' },
-                5: { subject: '', instructor: '', room: '', building: '', type: '' }
+                5: { subject: '', instructor: '', room: '', building: '', type: '' },
+                6: { subject: '', instructor: '', room: '', building: '', type: '' },
+                7: { subject: '', instructor: '', room: '', building: '', type: '' }
             },
             2: {
                 0: { subject: 'Численные методы', instructor: 'Сметанникова Елена Николаевна', room: '209', building: '1', type: '2' },
@@ -866,7 +878,9 @@ gConst.SHEDULE_STRUCTURE = function () {
                 2: { subject: 'Численные методы', instructor: 'Сметанникова Елена Николаевна', room: '309', building: '1', type: '1' },
                 3: { subject: 'УМФ', instructor: 'Харитонов', room: '211', building: '1', type: '1' },
                 4: { subject: 'Экономика', instructor: 'МИСТЕР ИКС', room: '307a', building: '1', type: '1' },
-                5: { subject: '', instructor: '', room: '', building: '', type: '' }
+                5: { subject: '', instructor: '', room: '', building: '', type: '' },
+                6: { subject: '', instructor: '', room: '', building: '', type: '' },
+                7: { subject: '', instructor: '', room: '', building: '', type: '' }
             },
             3: {
                 0: { subject: '', instructor: '', room: '', building: '', type: '' },
@@ -875,6 +889,8 @@ gConst.SHEDULE_STRUCTURE = function () {
                 3: { subject: '', instructor: '', room: '', building: '', type: '' },
                 4: { subject: 'Компьютерные телекоммуникации', instructor: 'Суханов С. В.', room: '315', building: '1', type: '0' },
                 5: { subject: 'Параллельное программирование', instructor: 'Попов С. Б.', room: '209', building: '1', type: '0' },
+                6: { subject: '', instructor: '', room: '', building: '', type: '' },
+                7: { subject: '', instructor: '', room: '', building: '', type: '' }
             },
             4: {
                 0: { subject: 'УМФ', instructor: 'Харитонов С. И.', room: '315', building: '1', type: '0' },
@@ -882,7 +898,9 @@ gConst.SHEDULE_STRUCTURE = function () {
                 2: { subject: '', instructor: '', room: '', building: '', type: '' },
                 3: { subject: 'Экономика', instructor: 'Антонов Е. А.', room: '503', building: '14', type: '0' },
                 4: { subject: '', instructor: '', room: '', building: '', type: '' },
-                5: { subject: '', instructor: '', room: '', building: '', type: '' }
+                5: { subject: '', instructor: '', room: '', building: '', type: '' },
+                6: { subject: '', instructor: '', room: '', building: '', type: '' },
+                7: { subject: '', instructor: '', room: '', building: '', type: '' }
             },
             5: {
                 0: { subject: 'Теория управления', instructor: 'Соболев', room: '315', building: '1', type: '0' },
@@ -890,7 +908,9 @@ gConst.SHEDULE_STRUCTURE = function () {
                 2: { subject: 'Методы параллельных вычислений', instructor: 'Головашкин', room: '307б', building: '1', type: '1' },
                 3: { subject: '', instructor: '', room: '', building: '', type: '' },
                 4: { subject: 'Физвоспитание', instructor: 'Койчев', room: '', building: '', type: '1' },
-                5: { subject: '', instructor: '', room: '', building: '', type: '' }
+                5: { subject: '', instructor: '', room: '', building: '', type: '' },
+                6: { subject: '', instructor: '', room: '', building: '', type: '' },
+                7: { subject: '', instructor: '', room: '', building: '', type: '' }
             },
             6: {
                 0: { subject: '', instructor: '', room: '', building: '', type: '' },
@@ -898,7 +918,9 @@ gConst.SHEDULE_STRUCTURE = function () {
                 2: { subject: '', instructor: '', room: '', building: '', type: '' },
                 3: { subject: '', instructor: '', room: '', building: '', type: '' },
                 4: { subject: '', instructor: '', room: '', building: '', type: '' },
-                5: { subject: '', instructor: '', room: '', building: '', type: '' }
+                5: { subject: '', instructor: '', room: '', building: '', type: '' },
+                6: { subject: '', instructor: '', room: '', building: '', type: '' },
+                7: { subject: '', instructor: '', room: '', building: '', type: '' }
             }
         },
         1: {
@@ -908,7 +930,9 @@ gConst.SHEDULE_STRUCTURE = function () {
                 2: { subject: '', instructor: '', room: '', building: '', type: '' },
                 3: { subject: '', instructor: '', room: '', building: '', type: '' },
                 4: { subject: '', instructor: '', room: '', building: '', type: '' },
-                5: { subject: '', instructor: '', room: '', building: '', type: '' }
+                5: { subject: '', instructor: '', room: '', building: '', type: '' },
+                6: { subject: '', instructor: '', room: '', building: '', type: '' },
+                7: { subject: '', instructor: '', room: '', building: '', type: '' }
             },
             1: {
                 0: { subject: '', instructor: '', room: '', building: '', type: '' },
@@ -916,7 +940,9 @@ gConst.SHEDULE_STRUCTURE = function () {
                 2: { subject: 'Численные методы', instructor: 'Сметанникова Елена Николаевна', room: '315', building: '1', type: '0' },
                 3: { subject: 'УМФ', instructor: 'Харитонов С. И.', room: '315', building: '1', type: '0' },
                 4: { subject: 'УМФ', instructor: 'Хариотнов С. И.', room: '211', building: '1', type: '1' },
-                5: { subject: '', instructor: '', room: '', building: '', type: '' }
+                5: { subject: '', instructor: '', room: '', building: '', type: '' },
+                6: { subject: '', instructor: '', room: '', building: '', type: '' },
+                7: { subject: '', instructor: '', room: '', building: '', type: '' }
             },
             2: {
                 0: { subject: '', instructor: '', room: '', building: '', type: '' },
@@ -924,7 +950,9 @@ gConst.SHEDULE_STRUCTURE = function () {
                 2: { subject: 'Методы параллельных вычислений', instructor: 'Головашкин', room: '211', building: '1', type: '1' },
                 3: { subject: 'Теория управления', instructor: 'Шварценеггер', room: '307б', building: '1', type: '1' },
                 4: { subject: 'Теория игр', instructor: 'Досколович', room: '204', building: '1', type: '1' },
-                5: { subject: '', instructor: '', room: '', building: '', type: '' }
+                5: { subject: '', instructor: '', room: '', building: '', type: '' },
+                6: { subject: '', instructor: '', room: '', building: '', type: '' },
+                7: { subject: '', instructor: '', room: '', building: '', type: '' }
             },
             3: {
                 0: { subject: '', instructor: '', room: '', building: '', type: '' },
@@ -932,7 +960,9 @@ gConst.SHEDULE_STRUCTURE = function () {
                 2: { subject: 'Методы параллельных вычислений', instructor: 'Головашкин', room: '517', building: '14', type: '0' },
                 3: { subject: 'Экономика', instructor: 'Антонов Е. А.', room: '517', building: '14', type: '0' },
                 4: { subject: 'УМФ', instructor: 'Хариотнов С. И.', room: '517', building: '14', type: '0' },
-                5: { subject: '', instructor: '', room: '', building: '', type: '' }
+                5: { subject: '', instructor: '', room: '', building: '', type: '' },
+                6: { subject: '', instructor: '', room: '', building: '', type: '' },
+                7: { subject: '', instructor: '', room: '', building: '', type: '' }
             },
             4: {
                 0: { subject: 'Теория управления', instructor: 'Соболев', room: '315', building: '1', type: '0' },
@@ -940,7 +970,9 @@ gConst.SHEDULE_STRUCTURE = function () {
                 2: { subject: 'Параллельное программирование', instructor: 'Попов С. Б.', room: '209', building: '1', type: '0' },
                 3: { subject: '', instructor: '', room: '', building: '', type: '' },
                 4: { subject: '', instructor: '', room: '', building: '', type: '' },
-                5: { subject: '', instructor: '', room: '', building: '', type: '' }
+                5: { subject: '', instructor: '', room: '', building: '', type: '' },
+                6: { subject: '', instructor: '', room: '', building: '', type: '' },
+                7: { subject: '', instructor: '', room: '', building: '', type: '' }
             },
             5: {
                 0: { subject: 'Теория игр', instructor: 'Досколович Л. Л.', room: '212', building: '1', type: '0' },
@@ -948,7 +980,9 @@ gConst.SHEDULE_STRUCTURE = function () {
                 2: { subject: '', instructor: '', room: '', building: '', type: '' },
                 3: { subject: '', instructor: '', room: '', building: '', type: '' },
                 4: { subject: '', instructor: '', room: '', building: '', type: '' },
-                5: { subject: 'Физвоспитание', instructor: 'Койчев', room: '', building: '', type: '1' }
+                5: { subject: 'Физвоспитание', instructor: 'Койчев', room: '', building: '', type: '1' },
+                6: { subject: '', instructor: '', room: '', building: '', type: '' },
+                7: { subject: '', instructor: '', room: '', building: '', type: '' }
             },
             6: {
                 0: { subject: '', instructor: '', room: '', building: '', type: '' },
@@ -956,12 +990,14 @@ gConst.SHEDULE_STRUCTURE = function () {
                 2: { subject: '', instructor: '', room: '', building: '', type: '' },
                 3: { subject: '', instructor: '', room: '', building: '', type: '' },
                 4: { subject: '', instructor: '', room: '', building: '', type: '' },
-                5: { subject: '', instructor: '', room: '', building: '', type: '' }
+                5: { subject: '', instructor: '', room: '', building: '', type: '' },
+                6: { subject: '', instructor: '', room: '', building: '', type: '' },
+                7: { subject: '', instructor: '', room: '', building: '', type: '' }
             }
         }
     }
-};
-/*
+};*/
+
 gConst.SHEDULE_STRUCTURE = function () {
     var ret = {};
     for (var w = 0; w < 2; w++)
@@ -983,4 +1019,4 @@ gConst.SHEDULE_STRUCTURE = function () {
         }
     }
     return ret;
-};*/
+};

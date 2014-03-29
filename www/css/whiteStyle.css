@@ -33,8 +33,8 @@
 .mini_tile, ui-index-new {
     width: 63px;
     height: 63px;
-    margin-right: 2%;
-    margin-bottom: 2%;
+    margin-right: 3px;
+    margin-bottom: 3px;
     position:relative;
     float: left;
 }
@@ -223,7 +223,7 @@ input
     float: left;
     line-height: 55px;
     padding-right: 10px;
-    color: #007acc;
+    color: #0050EF;
     height: 100%;
 }
 
@@ -231,6 +231,10 @@ input
     font-size: 26px;
     line-height: 25px;
 
+}
+
+a[href] {
+    color: #424242;
 }
 
 .clear {
@@ -291,4 +295,30 @@ input
 
 .new {
     margin-bottom: 20px;
+}
+
+.clues {
+    position: absolute; 
+    top: 55px; 
+    left: 0; 
+    width: 100%; 
+    background: #FFF; 
+    border: 2px solid #CCC;
+    z-index: 999;
+}
+
+.clue {
+    padding: 10px;
+    position: relative;
+    z-index: 9999;
+}
+
+    .clue:active {
+        background: #DDD;
+    }
+
+.sheduleFormElement {
+    width: 100%; 
+    display: block;
+    z-index: 45;
 }

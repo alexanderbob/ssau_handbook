@@ -101,7 +101,7 @@
                 if (shedule.room.length > 0)
                     more += shedule.room + ' ' + gConst.LOCALE.ROOM;
                 if (shedule.building.length > 0)
-                    more += ' ' + shedule.building + ' ' + gConst.LOCALE.BUILDING;
+                    more += ' ' + shedule.building + ' ' + gConst.LOCALE.CORPUS;
                 td.appendChild(gHelper.createNode('div', [
                     { name: 'class', value: 'more' },
                     { name: 'onselectstart', value: 'return false' }

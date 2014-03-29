@@ -69,7 +69,7 @@
         div.appendChild(gHelper.createNode('div', [{ name: 'class', value: 'b_info_header' }], gConst.LOCALE.EDU_INTERNAL));
         if (data.bachelor)
         {
-            div.appendChild(document.createTextNode(gConst.LOCALE.BACHELOR));
+            div.appendChild(gHelper.createNode('b', [], gConst.LOCALE.BACHELOR));
             div.appendChild(document.createElement('br'));
             for (var i = 0; i < data.bachelor.length; i++)
             {
@@ -80,7 +80,7 @@
         ret.appendChild(div);
         if (data.specialist)
         {
-            div.appendChild(document.createTextNode(gConst.LOCALE.SPECIALIST));
+            div.appendChild(gHelper.createNode('b', [], gConst.LOCALE.SPECIALIST));
             div.appendChild(document.createElement('br'));
             for (var i = 0; i < data.specialist.length; i++)
             {
@@ -91,7 +91,7 @@
         ret.appendChild(div);
         if (data.magister)
         {
-            div.appendChild(document.createTextNode(gConst.LOCALE.MAGISTER));
+            div.appendChild(gHelper.createNode('b', [], gConst.LOCALE.MAGISTER));
             div.appendChild(document.createElement('br'));
             for (var i = 0; i < data.magister.length; i++)
             {

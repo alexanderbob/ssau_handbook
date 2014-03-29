@@ -6,6 +6,10 @@
     form: null,
     instructors: [],
     subjects: [],
+    subjectWrapper: null,
+    subjectCluesNode: null,
+    teacherWrapper: null,
+    teacherCluesNode: null,
     init: function () {
         this.instructors = this.collectSheduleData('instructor');
         this.subjects = this.collectSheduleData('subject');
@@ -15,6 +19,10 @@
         this.form.teacher.value = this.params.instructor;
         this.form.auditore.value = this.params.room;
         this.form.corp.value = this.params.building;
+        this.subjectCluesNode = document.getElementById('subjectClues');
+        this.subjectWrapper = document.getElementById('subjectWrapper');
+        this.teacherCluesNode = document.getElementById('teacherClues');
+        this.teacherWrapper = document.getElementById('teacherWrapper');
         var label = gHelper.createNode('label', [
             { name: 'for', value: 'select-choice-a' },
             { name: 'class', value: 'select'}
@@ -22,6 +30,90 @@
         this.form.appendChild(label);
         this.form.appendChild(this.createTypeSelect());
         this.form['select-choice-a'].value = this.params.type;
+
+        this.form.subject.onfocusin = function (event) {
+            gSheduleEdit.drawSuggestions(event, gSheduleEdit.subjectWrapper, gSheduleEdit.subjectCluesNode, gSheduleEdit.subjects );
+        };
+        this.form.subject.onfocusout = function () {
+            gSheduleEdit.hideSuggestions(this.form.subject, gSheduleEdit.subjectWrapper, gSheduleEdit.subjectCluesNode);
+        };
+        
+        this.form.teacher.onfocusin = function (event) {
+            gSheduleEdit.drawSuggestions(event, gSheduleEdit.teacherWrapper, gSheduleEdit.teacherCluesNode, gSheduleEdit.instructors);
+        };
+        this.form.teacher.onfocusout = function () {
+            gSheduleEdit.hideSuggestions(this.form.teacher, gSheduleEdit.teacherWrapper, gSheduleEdit.teacherCluesNode);
+        };
+    },
+    clearSuggestions: function(node)
+    {
+        while (node.children.length > 0)
+            node.removeChild(node.children[0]);
+    },
+    hideSuggestions: function(input, wrapperNode, cluesNode)
+    {
+        /*while (cluesNode.children.length > 0)
+            cluesNode.removeChild(cluesNode.children[0]);*/
+        cluesNode.style.display = 'none';
+        wrapperNode.style.position = 'static';
+        input.onkeyup = null;
+    },
+    drawSuggestions: function(evt, wrapperNode, cluesNode, entries)
+    {
+        cluesNode.style.display = '';
+        wrapperNode.style.position = 'relative';
+        var input = evt.target;
+        input.onkeyup = function () {
+            gSheduleEdit.updateSuggestion(input, cluesNode, entries);
+        };
+    },
+    updateSuggestion: function(input, cluesNode, entries)
+    {
+        var search = input.value.toLowerCase();
+        if (search.length == 0)
+        {
+            gSheduleEdit.clearSuggestions(cluesNode);
+            return;
+        }
+        //array of already displayed suggestions
+        var suggestions = [];
+        var j = 0;
+        //first we need to check all suggestions and remove when value and suggestion do not match
+        for (var i = 0; i < cluesNode.children.length; i++)
+        {
+            var node = cluesNode.children[i];
+            if (node.CLUE.indexOf(search) == -1)
+            {
+                cluesNode.removeChild(node);
+                i--;
+            }
+            else
+            {
+                suggestions[j++] = node.CLUE;
+            }
+        }
+
+        var entriesLen = entries.length;
+        for (var k = 0; k < entriesLen; k++)
+        {
+            var entry = entries[k].toLowerCase();
+            //check if search already contained in suggestions. if not - add there
+            if (!gHelper.inArray(entry, suggestions) && entry.indexOf(search) > -1)
+            {
+                suggestions[j++] = entry;
+                gSheduleEdit.addNewClue(input, cluesNode, entries[k]);
+            }
+        }
+    },
+    addNewClue: function(input, root, str)
+    {
+        //<div class="clue">Владимир Саныч</div>
+        var div = gHelper.createNode('div', [{ name: 'class', value: 'clue' }], str);
+        div.CLUE = str.toLowerCase();
+        div.onmousedown = function () {
+            input.value = str;
+        };
+        root.appendChild(div);
     },
     createTypeSelect: function () {
         var select = gHelper.createNode('select', [{name: 'name', value: 'select-choice-a'}]);

@@ -5,7 +5,7 @@
         <title>SSAU Staff</title>
     </head>
     <body>
-        <div data-role="page" class="type-interior" data-theme="a" id="staff_info_page" >
+        <div data-role="page" class="type-interior" data-theme="a" id="staff_info_page" onselectstart="return false;">
             <div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false">
                 <span class="ui-app-title">Самарский государственный аэрокосмический университет</span>
                 <h1>Сотрудники Университета</h1>
@@ -16,14 +16,13 @@
                     <table data-role="pageSlider" style="vertical-align: top; table-layout: fixed">
                         <tr>
                             <td style="width: 50%; vertical-align: top;" id="staff_info_first">
-                                <form>
-                                    <input type="text" name="search" id="staffSearchInput" value="" style="width: 70%; float: left" />
-                                    <a data-inline="true" 
-                                       data-transition="none" data-role="button"
-                                       data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" 
-                                       data-theme="a" style="float: left; margin-left: 1%; padding: 4px 0; margin-top: 0; width: 58px; height: 28px">
-                                    </a>
-                                </form>
+                                <input type="text" name="search" id="staffSearchInput" value="" style="width: 70%; float: left" />
+                                <a data-inline="true" 
+                                    data-transition="none" data-role="button"
+                                    data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" 
+                                    data-theme="a" style="float: left; margin-left: 1%; padding: 4px 0; margin-top: 0; width: 58px; height: 26px">
+                                    <img src="img/search.png" width="38" height="38" style="position: relative; bottom: 6px"/>
+                                </a>
                                 <div style="clear: both"></div>
                             </td>
                             <td style="vertical-align: top" id="staff_info_second">

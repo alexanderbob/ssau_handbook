@@ -3,15 +3,15 @@
     firstPage: null,
     secondPage: null,
     staffResNode: null,
-    searchForm: null,
+    searchInput: null,
     init: function (firstPageId, secondPageId) {
         if (!this.initialized)
         {
             this.firstPage = document.getElementById(firstPageId);
             this.secondPage = document.getElementById(secondPageId);
             this.staffResNode = this.secondPage.children[0].children[0];
-            this.searchForm = this.firstPage.children[0];
-            this.searchForm.children[1].onclick = this.searchByWord;
+            this.searchInput = this.firstPage.children[0];
+            this.firstPage.children[1].onclick = this.searchByWord;
             var len = gConst.STAFF_LETTERS.length;
             for (var i = 0; i < len; i++)
             {
@@ -19,6 +19,10 @@
             }
             //this.initialized = true;
         }
+    },
+    fixEnter: function(event) {
+        if (event.keyCode == 13)
+            event.preventDefault();
     },
     renderFoundResult: function (result) {
         gStaff.clearSecondPage();
@@ -44,13 +48,13 @@
         gPhonegap.DATA.searchStaff(searchStr, gStaff.renderFoundResult, gConst.STAFF_SEARCH_TYPE_TILE);
     },
     searchByWord: function() {
-        var str = gStaff.searchForm.search.value;
+        var str = gStaff.searchInput.value;
         if (str.length == 0)
         {
             alert(gConst.LOCALE.NO_TEXT_ENTERED);
             return;
         }
-        else if (str.length <= gConst.STAFF_SEARCH_MIN_LEN)
+        else if (str.length < gConst.STAFF_SEARCH_MIN_LEN)
         {
             alert(gConst.LOCALE.THREE_CHARS_MIN);
             return;

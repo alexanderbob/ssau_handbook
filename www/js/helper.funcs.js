@@ -11,6 +11,24 @@
     onselectstart: function() {
         return false;
     },
+    inArray: function(val, arr) {
+        var len = arr.length;
+        for (var i = 0; i < len; i++)
+        {
+            if (arr[i] == val)
+                return true;
+        }
+        return false;
+    },
+    inArrayByMask: function (val, arr) {
+        var len = arr.length;
+        for (var i = 0; i < len; i++)
+        {
+            if (arr[i].indexOf(val) > -1)
+                return true;
+        }
+        return false;
+    },
     sitesClick: function(event) {
         var div = event.currentTarget;
         var href = div.children[1].innerHTML;
@@ -106,16 +124,45 @@
             root.onmousedown = gHelper.subjectMouseDown;
             root.onclick = function (event) {
                 gHelper.subjectMouseDown(event, event.currentTarget);
-                window.open('http://ssau.ru/' + event.currentTarget.HREF, '_system');
+                window.open('http://ssau.ru' + event.currentTarget.HREF, '_system');
             };
             this.newsNode.appendChild(root);
         }
     },
     parseNews: function (html) {
-        var from = html.indexOf('<div id="cont_text"><br><ul>');
-        var to = html.indexOf('</ul>', from);
-        var ul = html.substring(from, to);
-        var liStart = 0;
+        var from = html.indexOf('<div id="cont_text"><br><ul>'),
+            to = html.indexOf('</ul>', from),
+            ul = html.substring(from, to),
+            root = document.createElement('div');
+        root.innerHTML = ul;
+        var news = root.getElementsByClassName('news_block_si'),
+            len = Math.min(news.length, gConst.NEWS_COUNT),
+            ret = [],
+            parse_record = function (root) {
+                var date = root.getElementsByClassName('n_date_si'),
+                    content = root.getElementsByClassName('n_text_si'), href = '', title = '';
+                if (date.length > 0)
+                {
+                    date = date.item(0).textContent;
+                }
+                if (content.length > 0)
+                {
+                    title = content.item(0).childNodes[0].textContent;
+                    href = content.item(0).getElementsByTagName('a');
+                    if (href.length > 0)
+                    {
+                        href = href.item(0).getAttribute('href');
+                    }
+                }
+                return {'title': title, 'href': href, 'date': date};
+            };
+        
+        for (var i = 0; i < len; i++)
+        {
+            ret.push( parse_record(news.item(i)) );
+        }
+        
+        /*var liStart = 0;
         var liEnd = 0;
         var spanText = '<span style="color:#6aa033">';
         var ret = [];
@@ -134,7 +181,7 @@
             var title = li.substring(hrefEnd+1, li.indexOf('</a>', hrefEnd));
             var date = span.substring(span.indexOf(', ')+2, span.length);
             ret[i] = {'title': title, 'href': href, 'date': date};
-        }
+        }*/
         gPhonegap.DATA.updateStorage(gConst.PATHS.NEWS, ret);
         gHelper.updateNews(ret);
     }

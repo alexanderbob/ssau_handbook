@@ -39,7 +39,7 @@
     <SupportedCultures>en-US</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
-    <XapFilename>CordovaAppProj_$(Configuration)_$(Platform).xap</XapFilename>
+    <XapFilename>ssau_handbook.xap</XapFilename>
     <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
     <SilverlightAppEntry>ssau_handbook.App</SilverlightAppEntry>
     <ValidateXaml>true</ValidateXaml>
@@ -210,7 +210,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="config.xml" />
+    <Content Include="BackgroundMedium.png" />
+    <Content Include="config.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Images\appbar.back.rest.png" />
     <Content Include="Images\appbar.close.rest.png" />
     <Content Include="Images\appbar.feature.video.rest.png" />
@@ -226,6 +229,8 @@
     <Content Include="www\campus.html" />
     <Content Include="www\cordova-2.6.0.js" />
     <Content Include="www\css\test_css.css" />
+    <Content Include="www\img\uvr.png" />
+    <Content Include="www\uvr.html" />
     <Resource Include="www\css\default\images\ajax-loader.gif" />
     <Content Include="www\css\app-bar.css" />
     <Content Include="www\css\default\images\ajax-loader.png" />
@@ -276,9 +281,11 @@
     <Content Include="www\img\map.png" />
     <Content Include="www\img\misc.png" />
     <Content Include="www\img\practice.png" />
+    <Content Include="www\img\search.png" />
     <Content Include="www\img\shed.png" />
     <Content Include="www\img\srw.png" />
     <Content Include="www\img\ssau_logo.png" />
+    <Content Include="www\img\ssau_logo1.png" />
     <Content Include="www\img\staff.png" />
     <Content Include="www\img\struct.png" />
     <Content Include="www\img\themeLine.png" />
@@ -356,7 +363,6 @@
     <Content Include="www\staff.html" />
     <Content Include="www\structure.html" />
     <Content Include="www\units.html" />
-    <Content Include="www\wpThemeDemo.html" />
     <None Include="packages.config" />
     <None Include="VERSION" />
     <Resource Include="cordovalib\Images\appbar.back.rest.png" />
